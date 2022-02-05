@@ -1,0 +1,16 @@
+<html>
+<head> <title> algoritma 3 </title> </head>
+<body>
+
+<script>
+
+var factorial = function(number) {
+    if(number == 0) {
+        return 1
+    } else {
+        return number * factorial(number - 1);
+    }
+}
+
+document.write(factorial(5));
+</script>

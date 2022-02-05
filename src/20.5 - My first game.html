@@ -1,0 +1,100 @@
+<html>
+<head> <title> Letter Game </title> </head>
+<body onkeypress="keyPress(event);">
+ <center> <b> <p id="demo"> Press any key </p> 
+ 
+<script>
+
+var Array = 
+[
+ 
+[ "x","x","x","x","x","x","x","x","T","x","x","x","x","x","x","x","x","x","x","x"], 
+["x",0,"o",0,0,0,"x",0,0,0,0,"x",0,0,0,0,0,0,0,"x"], 
+["x",0,0,0,0,0,"x", 0,0,0,0,0,0,0,0,0,0,0,0,"x"], 
+["x",0,0,0,0,0,"x",0,0,0,0,0,0,0,0,0,0,0,0,"x"], 
+["x",0,0,0,0,0,"x",0,0,0,0,"x",0,0,0,0,0,0,0,"x"], 
+["x","x","x","T","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"]
+
+];
+var updown=1;
+var leftright=2;
+
+function keyPress(event) {
+
+    var x = event.charCode || event.keyCode;  // Get the Unicode value
+    var y = String.fromCharCode(x).toLowerCase();  // Convert the value into a character
+	var text = "";
+	var line = "";
+	
+   
+
+    if(y=="a") { 
+	      if (1 <= leftright && Array[updown][leftright-1]!="x"){ 
+             temp = Array[updown][leftright]; 
+	         Array[updown][leftright]=Array[updown][leftright-1]
+	         Array[updown][leftright-1]= temp;	
+             leftright--			 
+			 }
+	
+	} 
+	
+	else if(y=="d") { 
+	      if (leftright <= Array[updown].length-2 && Array[updown][leftright+1]!="x"){ 
+             temp = Array[updown][leftright]; 
+	         Array[updown][leftright]=Array[updown][leftright+1]
+	         Array[updown][leftright+1]= temp;	
+             leftright++			 
+			 }
+	
+	} 
+	else if(y=="w") { 
+	
+	     if (updown==1&& leftright== 8) {  
+		     temp = Array[1][8]; 
+	         Array[1][8] = Array[4][3];
+	         Array[4][3] = temp;	
+             updown=4;
+			 leftright=3;
+           	}
+	
+	    else if (1 <= updown && Array[updown-1][leftright]!="x"){ 
+             temp = Array[updown][leftright]; 
+	         Array[updown][leftright]=Array[updown-1][leftright];
+	         Array[updown-1][leftright]= temp;	
+             updown--			 
+			 }
+	
+	} 
+	
+	else if(y=="s") { 
+	      
+		  if (updown==4 && leftright== 3) {  
+		     temp = Array[4][3]; 
+	         Array[4][3] = Array[1][8];
+	         Array[1][8] = temp;	
+             updown=1;
+			 leftright=8;
+           			 
+			 
+			 }
+			 
+	      else if (updown <= Array.length-2 && Array[updown+1][leftright]!="x"){ 
+             temp = Array[updown][leftright]; 
+	         Array[updown][leftright]=Array[updown+1][leftright];
+	         Array[updown+1][leftright]= temp;	
+             updown++			 
+			 }
+		
+	
+	} 
+   
+    for(i=0; i<Array.length; i++) { 
+	var line="";
+	for(j=0; j<Array[i].length; j++) line= line + Array[i][j] ; 
+	text = text + line + "<br>" }
+	
+    document.getElementById("demo").innerHTML =  text;
+
+}
+
+</script>

@@ -1,0 +1,36 @@
+<html>
+<head> <title> Sorting array elements </title> </head>
+<body>
+
+<script>
+	
+var My_array = ["Elmas", "elmas" , "elmadag", "10el", "10", "11", "12"];
+		
+    for(times=0; times<My_array.length; times++) 
+     {
+		smallest = times;
+		  
+		  
+		for (i = times+1; i < My_array.length; i++) { 
+			var LetterNumber = 0;
+            var LetterTry=0;
+				  
+				for (i2 = 0; i2 < LetterTry+1; i2++) {
+				    if( My_array[i].toLowerCase().charAt(LetterNumber).charCodeAt(0) == My_array[smallest].toLowerCase().charAt(LetterNumber).charCodeAt(0)) {
+						LetterNumber = LetterNumber+1;
+						LetterTry++; }
+                            }	 		
+				
+			if ( My_array[i].length==LetterNumber && My_array[smallest].length > My_array[i].length ||
+			My_array[i].toLowerCase().charAt(LetterNumber).charCodeAt(0) < My_array[smallest].toLowerCase().charAt(LetterNumber).charCodeAt(0) ) 
+				
+				smallest=i;	
+				 
+			}
+			
+		transer=My_array[times]; 
+		My_array[times]=My_array[smallest];
+		My_array[smallest]=transer;
+		}    
+	document.write(My_array);
+</script>

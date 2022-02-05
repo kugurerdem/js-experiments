@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title> </title>
+	</head>
+	<body bgcolor="#D0D0D0">
+		<center> 
+			<button onclick="generate()"> 
+				Generate
+			</button> 
+			<p id="demo"> 
+				Press Generate button for Generate new ideas
+			</p>
+				
+		</center>
+		
+		<script>
+			var sentence1 = new Array();
+			var sentence2 = new Array();
+			
+			sentence1.push("Open the window");
+			sentence1.push("Look at the Sky");
+			sentence1.push("Close your pc");
+			sentence1.push("Think about life");
+			sentence1.push("Ask yourself \"what is the meaning of life?\" ");
+			sentence1.push("Read the 1984 by George Orwell");
+			sentence1.push("Stop watching television");
+			sentence1.push("Try how to learn programming");
+			sentence1.push("Don't believe what media says");
+			sentence1.push("Believe what media says");
+			sentence1.push("Be an atheist");
+			sentence1.push("Go for a pride parade");
+			sentence1.push("Watch TheFilthyFrankShow")
+			
+			sentence2.push("kill yourself");
+			sentence2.push("go outside");
+			sentence2.push("don't do anything");
+			sentence2.push("walk arround");
+			sentence2.push("yell \"i'm as mad as hell and i'm not going to take this anymore!\" ");
+			sentence2.push("say \"the trees are humans too\" ");
+			sentence2.push("go for a pee");
+			sentence2.push("drink a vine");
+			sentence2.push("run forest");
+			sentence2.push("say \"Look, The God created world how beautifully\" ");
+			sentence2.push("say \"Hey! I'm making minecraft videos! Check out my youtube channel.\" ");
+			sentence2.push("argue with other people about is anime cartoon or not?");
+			sentence2.push("think about vastness of the universe");
+			
+			
+			function generate(){
+				document.getElementById("demo").innerHTML = sentence1[Math.floor((sentence1.length)*Math.random())] + " and then " + 
+				sentence2[Math.floor((sentence2.length)*Math.random())];
+			}
+		</script>
+	
+	

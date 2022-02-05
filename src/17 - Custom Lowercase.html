@@ -1,0 +1,35 @@
+
+<html>
+<head> <title> Sorting array elements </title> </head>
+<body>
+
+<script>
+
+ function ErdemCase(str) 
+{ 
+    var find= ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]; 
+    var by= ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    var newStr= "";
+ 
+  for(i=0; i<str.length; i++) 
+   {   
+      letter = str[i];
+	  
+     for(j=0; j<find.length; j++) 
+     {  
+       if (str[i] == find[j]) 
+	   {
+	     letter = by[j];
+	     break;
+	   }
+     }
+   
+     newStr= newStr + letter;
+   }
+     str = newStr;
+
+   return str;
+}
+
+document.write(ErdemCase("SELAM"));
+</script>

@@ -1,0 +1,40 @@
+
+<html>
+<head> <title> CRIPTO </title> </head>
+<body>
+
+<script>
+
+  
+    str= "selam";
+    var find = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]; 
+    var by = ["z","y","x","w","v","u","t","s","r","q","p","o","n","m","l","k","j","i","h","g","f","e","d","c","b","a"]; 
+  
+var newStr= "";
+  
+ for(i=0; i<str.length; i++) 
+ {
+      letter = str[i];
+	  
+   for(i2=0; i2<find.length; i2++) 
+   {  
+      if (str[i] == find[i2]) 
+	  letter = by[i2];
+   }
+   
+   newStr= newStr + letter;
+ }
+   str = newStr;
+
+ document.write(str);
+  
+  
+  /* var count = 0;
+  for (var i2 = 0; i2 < str.length; i2++) {
+    if (str.charAt(i) === letter) {
+        count++;
+    } 
+  }  */
+ 
+
+</script>

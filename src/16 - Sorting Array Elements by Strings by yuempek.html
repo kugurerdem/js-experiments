@@ -1,0 +1,50 @@
+
+<html>
+<head> <title> Sorting array elements </title> </head>
+<body>
+
+<script>
+
+var elements = ["Elmas", "elmas" , "elmadag", "10el", "10", "11", "12"];
+
+  for(var elementIndex = 0; elementIndex < elements.length - 1; elementIndex++) 
+  {
+    smallestIndex = elementIndex;
+
+
+    for (var i = elementIndex + 1; i < elements.length; i++)
+    { 
+      var LetterIndex = 0;
+
+      var compareString1 = elements[smallestIndex].toLowerCase();
+      var compareString2 = elements[i].toLowerCase();
+
+      while ( LetterIndex < compareString1.length && LetterIndex < compareString2.length && 
+              compareString1.charCodeAt(LetterIndex) == compareString2.charCodeAt(LetterIndex) ) // aynı harfleri geç
+      {
+        LetterIndex++;
+      }
+
+      var isSmallest = false;
+
+      if( compareString1.length == LetterIndex ) 
+          continue; //do nothing, go to next. 
+      
+      if( compareString2.length == LetterIndex ) 
+          isSmallest = true;
+      
+      if( compareString1.charCodeAt(LetterIndex) > compareString2.charCodeAt(LetterIndex) ) 
+          isSmallest = true;
+
+      if(isSmallest)
+      {
+        tmpString=elements[i]; 
+        elements[i]=elements[smallestIndex];
+        elements[smallestIndex]=tmpString;
+      }
+
+    }     
+  }
+  document.write(elements);
+  
+  </script>

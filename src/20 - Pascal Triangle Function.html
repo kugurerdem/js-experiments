@@ -1,0 +1,51 @@
+<html>
+<head> <title> Sorting array members </title> </head>
+<body>
+
+<script>
+
+function pascalTriangle( input, times )
+{
+
+    var newput = [ ];
+    if ( input.length > 0 ) { newput.push( 1 ); }
+    for ( i = 0; i < input.length-1; ++i )
+    {
+        newput.push( input[i] + input[i+1] );
+    }
+    newput.push( 1 );
+   
+	document.write("<center>" + newput + "</br>" )
+   
+	if ( --times > 0 ) 
+    {
+        pascalTriangle( newput, times );
+    }
+}
+
+pascalTriangle( [] , 15 );
+
+/* Without functions version:
+
+var times = 5;
+var input = [ ];
+
+for(i=0; i<times; i++) 
+{
+    var newput = [ ];
+    if ( input.length > 0 ) { newput[newput.length] = 1 ; }
+    for ( j = 0; j < input.length-1; j++ )
+    {
+        newput[j+1] = input[j] + input[j+1];
+    }
+    newput[newput.length] = 1 ;
+    input=newput;
+	document.write(newput + "</br>")
+}
+*/
+
+
+</script>
+
+
+

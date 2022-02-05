@@ -1,0 +1,26 @@
+<html>
+<head> <title> odev algoritmam 7 </title> </head>
+<body>
+
+<script>
+var nLines = parseInt(prompt("Your value?",""));
+
+for (var i=0; i < nLines; i++) 
+{ 
+
+  var line   = "";
+  
+  for (var j=(nLines-i)*2; j > 0; j--) line += "&nbsp";
+  
+  var nextNumber   = i+1;
+  var lineSize     = (i+1)*2-1;
+  var halfLineSize = i+1;
+  
+  for (k=0; k <halfLineSize ; k++) line += (nextNumber++%2==0 ? "x" : nextNumber-1);
+  for (k=halfLineSize; k > 1 ; k--) line += (nextNumber--%2==0 ? "x" : nextNumber-1);
+  document.write(line +"</br>");
+}
+
+
+</script>
+

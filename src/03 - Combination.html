@@ -1,0 +1,17 @@
+<html>
+<head> <title> algoritma 4 </title> </head>
+<body>
+
+<script>
+
+var y = prompt("Kombinasyon kumesinin 1. elemani","");
+var x = prompt("Kombinasyon kumesinin 2. elemani","");
+
+ var A = 1; 
+ var B = 1;
+
+ for (i=1; i<x; i++) B=B *(i+1);
+ for (i=0; i<x; i++) A=A*(y-i); 
+document.write("C("+y+","+x+")="+A/B);
+
+</script>

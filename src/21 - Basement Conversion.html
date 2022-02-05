@@ -1,0 +1,50 @@
+<html>
+<head> <title> Number Basement Conversion </title> </head>
+<body>
+
+
+Decimal Number: <input type="text" id="Number"/> 
+New Number's Basement: <input type="text" id="base"/> 
+<button onclick="Values()"> Conversion button </button>
+<p id="output"> </p>
+
+<script>
+
+function Binary(Number, base) 
+{
+
+ str = "";
+ 
+   while(base <= Number)
+   {
+   	
+      if(Number%base==0) 
+	   {
+         divide= Number/base;
+         str= Number%base + str;
+         Number= divide;		 
+	   }
+	 
+	  else
+       {
+	     divide=(Number-(Number%base))/base;
+		 str= Number%base + str;
+		 Number= divide;
+	   
+	   }	  
+	  
+	 
+   }
+   
+   str=  Number + str;
+   return str;
+}
+
+function Values() 
+{
+var Number = parseInt(document.getElementById("Number").value);
+var base = parseInt(document.getElementById("base").value);
+document.getElementById("output").innerHTML =  Binary(Number, base);
+}
+
+</script>

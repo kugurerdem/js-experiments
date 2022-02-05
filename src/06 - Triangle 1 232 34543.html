@@ -1,0 +1,23 @@
+<html>
+<head> <title> odev algoritmam 5 </title> </head>
+<body>
+
+<script>
+
+var nLines = parseInt(prompt("Kow many lines do you want to see in triangle?",""));
+
+for (var i=0; i < nLines; i++) 
+{ 
+
+  var line   = "";
+  for (var j=(nLines-i)*2; j > 0; j--) line += "&nbsp";
+  
+  var HalfLine= i+1;
+  
+  for (k=0; k<HalfLine; k++) line+= (HalfLine+k);
+  for (k=HalfLine; k>1; k--) line+= (k);
+  
+  document.write(line + "</br>");  
+
+}
+ </script>

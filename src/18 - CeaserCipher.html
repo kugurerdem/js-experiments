@@ -1,0 +1,69 @@
+<html>
+<head> <title> Ceaser Crypting </title> </head>
+<body>
+
+Number: <input type="text" id="pNum"/> 
+String: <input type="text" id="str"/> 
+<button onclick="lCrypt()"> Crypt to Left </button>
+<button onclick="rCrypt()"> Crypt to Right </button>
+<p id="output"> </p>
+<script>
+
+function rCrypt() 
+{
+var pNum = parseInt(document.getElementById("pNum").value);
+var str = document.getElementById("str").value;
+
+var find = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+var newStr= "";
+  
+ for(i=0; i<str.length; i++) 
+ {
+      letter = str[i];
+	  
+   for(i2=0; i2<find.length; i2++) 
+   {  
+      if (str[i] == find[i2]) 
+	  {
+	  letter = find[(i2+pNum)%find.length];
+	  break;
+	  }
+   }
+   
+   newStr= newStr + letter;
+ }
+   str = newStr;
+  document.getElementById("output").innerHTML = str;  
+}
+
+
+function lCrypt() {
+var pNum = parseInt(document.getElementById("pNum").value);
+var str = document.getElementById("str").value;
+
+var find = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+var newStr= "";
+  
+ for(i=0; i<str.length; i++) 
+ {
+      letter = str[i];
+	  
+   for(i2=0; i2<find.length; i2++) 
+   {  
+      if (str[i] == find[i2]) 
+	  {
+	     if (i2-pNum>=0) letter = find[(i2-pNum)];
+	     else letter=find[find.length+(i2-pNum)%find.length];
+		 break;
+	  }
+   }
+   
+   newStr= newStr + letter;
+ }
+   str = newStr;
+
+  document.getElementById("output").innerHTML = str;  
+}
+</script>
